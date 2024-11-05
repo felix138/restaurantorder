@@ -1,0 +1,622 @@
+{% extends "base.html" %}
+
+{% block title %}点餐{% endblock %}
+
+{% block styles %}
+<style>
+/* 主布局 */
+.order-container {
+    display: flex;
+    height: calc(100vh - 100px);
+    margin: -1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+    font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+/* 左侧菜品区域 */
+.menu-section {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 右侧订单区域 */
+.order-section {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 订单头部 */
+.order-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e0e6ed;
+    background: linear-gradient(to right, #f8f9fa, #ffffff);
+}
+
+/* 订单列表 */
+.order-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: #ffffff;
+}
+
+/* 数字键盘区域 */
+.numpad {
+    padding: 1.5rem;
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+    border-top: 1px solid #e0e6ed;
+}
+
+.numpad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+}
+
+.numpad-button {
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    border: none;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #2c3e50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.numpad-button:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 功能按钮区域 */
+.function-buttons {
+    padding: 1.5rem;
+    border-top: 1px solid #e0e6ed;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    background: #ffffff;
+}
+
+.function-buttons .btn {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* 分类导航 */
+.category-nav {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(to right, #2c3e50, #3a4a5d);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.category-nav .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.category-nav .nav-link {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    background: #34495e;
+    color: #ffffff;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: "华文行楷", "KaiTi", cursive;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-nav .nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #2c3e50;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.category-nav .nav-link.active {
+    background: linear-gradient(45deg, #1a2a3a, #2c3e50);
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 添加点击波纹效果 */
+.category-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.category-nav .nav-link:active::after {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+/* 确保文字在任何状态下都清晰可见 */
+.category-nav .nav-link,
+.category-nav .nav-link:hover,
+.category-nav .nav-link:active,
+.category-nav .nav-link.active {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 菜品网格 */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.menu-item-card {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-container {
+    height: 140px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-item-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-family: "华文行楷", "KaiTi", cursive;
+    color: #2c3e50;
+    text-align: center;
+    padding: 0.5rem 0;
+    letter-spacing: 1px;
+}
+
+.card-price {
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 0.8rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+}
+
+/* 订单项样式 */
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+}
+
+.item-price {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.quantity-btn {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    background: #f8f9fa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #2c3e50;
+}
+
+.quantity-btn:hover {
+    background: #e9ecef;
+    transform: translateY(-1px);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* 添加按钮样式 */
+.add-to-order {
+    background: linear-gradient(45deg, #FF4B2B, #FF416C);
+    border: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(255, 75, 43, 0.3);
+}
+
+.add-to-order:hover {
+    background: linear-gradient(45deg, #FF416C, #FF4B2B);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 75, 43, 0.4);
+    color: white;
+}
+
+/* 功能按钮样式 */
+.function-buttons .btn-primary {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    border: none;
+    color: white;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(33, 147, 176, 0.3);
+}
+
+.function-buttons .btn-primary:hover {
+    background: linear-gradient(45deg, #6dd5ed, #2193b0);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(33, 147, 176, 0.4);
+    color: white;
+}
+
+.function-buttons .btn-secondary {
+    background: linear-gradient(45deg, #8e9eab, #eef2f3);
+    border: none;
+    color: #2c3e50;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(142, 158, 171, 0.3);
+}
+
+.function-buttons .btn-secondary:hover {
+    background: linear-gradient(45deg, #eef2f3, #8e9eab);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(142, 158, 171, 0.4);
+    color: #2c3e50;
+}
+
+/* 按钮激活状态 */
+.add-to-order:active,
+.function-buttons .btn:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="order-container">
+    <!-- 左侧菜品区域 -->
+    <div class="menu-section">
+        <!-- 分类导航 -->
+        <div class="category-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <button class="nav-link active" data-category="all">全部</button>
+                </li>
+                {% for category in categories %}
+                <li class="nav-item">
+                    <button class="nav-link" data-category="{{ category.id }}">
+                        {{ category.name }}
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- 菜品网格 -->
+        <div class="menu-grid">
+            {% for item in items %}
+            <div class="menu-item-card" data-category="{{ item.category_id }}">
+                <div class="card-img-container">
+                    {% if item.image_url %}
+                    <img src="{{ item.image_url }}" class="card-img-top" alt="{{ item.name }}">
+                    {% else %}
+                    <div class="no-image-placeholder">暂无图片</div>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <div class="card-price">¥{{ item.price }}</div>
+                    <button class="btn btn-primary btn-sm w-100 add-to-order"
+                            data-id="{{ item.id }}"
+                            data-name="{{ item.name }}"
+                            data-price="{{ item.price }}">
+                        添加
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- 右侧订单区域 -->
+    <div class="order-section">
+        <!-- 订单头部 -->
+        <div class="order-header">
+            <div class="input-group">
+                <span class="input-group-text">桌号</span>
+                <input type="text" class="form-control" id="table_number" required>
+            </div>
+        </div>
+
+        <!-- 订单列表 -->
+        <div class="order-items" id="order-items">
+            <!-- 订单项将通过JavaScript动态添加 -->
+        </div>
+
+        <!-- 数字键盘 -->
+        <div class="numpad">
+            <div class="numpad-grid">
+                <button class="numpad-button">1</button>
+                <button class="numpad-button">2</button>
+                <button class="numpad-button">3</button>
+                <button class="numpad-button">4</button>
+                <button class="numpad-button">5</button>
+                <button class="numpad-button">6</button>
+                <button class="numpad-button">7</button>
+                <button class="numpad-button">8</button>
+                <button class="numpad-button">9</button>
+                <button class="numpad-button">清除</button>
+                <button class="numpad-button">0</button>
+                <button class="numpad-button">.</button>
+            </div>
+        </div>
+
+        <!-- 功能按钮 -->
+        <div class="function-buttons">
+            <button class="btn btn-secondary" id="clear-order">清空订单</button>
+            <button class="btn btn-primary" id="submit-order">提交订单</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// 定义全局变量存储订单项
+let orderItems = {};
+let totalAmount = 0;
+
+// 添加菜品到订单
+document.querySelectorAll('.add-to-order').forEach(button => {
+    button.addEventListener('click', function() {
+        const itemId = this.dataset.id;
+        const itemName = this.dataset.name;
+        const itemPrice = parseFloat(this.dataset.price);
+        
+        if (orderItems[itemId]) {
+            orderItems[itemId].quantity += 1;
+        } else {
+            orderItems[itemId] = {
+                name: itemName,
+                price: itemPrice,
+                quantity: 1
+            };
+        }
+        
+        updateOrderDisplay();
+    });
+});
+
+// 更新订单显示
+function updateOrderDisplay() {
+    const orderItemsDiv = document.getElementById('order-items');
+    orderItemsDiv.innerHTML = '';
+    totalAmount = 0;
+    
+    for (const itemId in orderItems) {
+        const item = orderItems[itemId];
+        const itemTotal = item.price * item.quantity;
+        totalAmount += itemTotal;
+        
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'order-item';
+        itemDiv.innerHTML = `
+            <div class="item-info">
+                <div class="item-name">${item.name}</div>
+                <div class="item-price">¥${item.price.toFixed(2)}</div>
+            </div>
+            <div class="item-quantity">
+                <button class="quantity-btn" onclick="updateQuantity('${itemId}', -1)">-</button>
+                <span>${item.quantity}</span>
+                <button class="quantity-btn" onclick="updateQuantity('${itemId}', 1)">+</button>
+            </div>
+            <div class="item-total">¥${itemTotal.toFixed(2)}</div>
+        `;
+        orderItemsDiv.appendChild(itemDiv);
+    }
+    
+    // 添加总计
+    if (Object.keys(orderItems).length > 0) {
+        const totalDiv = document.createElement('div');
+        totalDiv.className = 'order-item total';
+        totalDiv.innerHTML = `
+            <div class="item-info">
+                <div class="item-name">总计</div>
+            </div>
+            <div class="item-total">¥${totalAmount.toFixed(2)}</div>
+        `;
+        orderItemsDiv.appendChild(totalDiv);
+    }
+}
+
+// 更新菜品数量
+function updateQuantity(itemId, change) {
+    if (orderItems[itemId]) {
+        orderItems[itemId].quantity += change;
+        if (orderItems[itemId].quantity <= 0) {
+            delete orderItems[itemId];
+        }
+        updateOrderDisplay();
+    }
+}
+
+// 清空订单
+document.getElementById('clear-order').addEventListener('click', function() {
+    if (confirm('确定要清空订单吗？')) {
+        orderItems = {};
+        updateOrderDisplay();
+    }
+});
+
+// 提交订单
+document.getElementById('submit-order').addEventListener('click', async function() {
+    const tableNumber = document.getElementById('table_number').value;
+    if (!tableNumber) {
+        alert('请输入桌号');
+        return;
+    }
+    
+    if (Object.keys(orderItems).length === 0) {
+        alert('请先添加菜品');
+        return;
+    }
+    
+    try {
+        const response = await fetch('/staff/submit_order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                table_number: tableNumber,
+                items: Object.entries(orderItems).map(([id, item]) => ({
+                    item_id: parseInt(id),
+                    quantity: item.quantity,
+                    price: item.price
+                }))
+            })
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            alert('订单提交成功');
+            orderItems = {};
+            document.getElementById('table_number').value = '';
+            updateOrderDisplay();
+        } else {
+            alert('订单提交失败：' + result.message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('订单提交失败');
+    }
+});
+
+// 分类筛选
+document.querySelectorAll('.category-nav .nav-link').forEach(button => {
+    button.addEventListener('click', function() {
+        // 移除所有active类
+        document.querySelectorAll('.category-nav .nav-link').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        // 添加active类到当前按钮
+        this.classList.add('active');
+        
+        const categoryId = this.dataset.category;
+        document.querySelectorAll('.menu-item-card').forEach(card => {
+            if (categoryId === 'all' || card.dataset.category === categoryId) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// 数字键盘处理
+document.querySelectorAll('.numpad-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const tableInput = document.getElementById('table_number');
+        const value = this.textContent;
+        
+        if (value === '清除') {
+            tableInput.value = '';
+        } else {
+            tableInput.value += value;
+        }
+    });
+});
+</script>
+{% endblock %} 

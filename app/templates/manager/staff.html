@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}员工管理{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>员工管理</h1>
+    <div class="mb-3">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStaffModal">
+            添加员工
+        </button>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>工号</th>
+                        <th>姓名</th>
+                        <th>部门</th>
+                        <th>职位</th>
+                        <th>入职日期</th>
+                        <th>联系电话</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for staff_member in staff_list %}
+                    <tr>
+                        <td>{{ staff_member.employee_id }}</td>
+                        <td>{{ staff_member.user.real_name or staff_member.user.username }}</td>
+                        <td>{{ staff_member.department }}</td>
+                        <td>{{ staff_member.position }}</td>
+                        <td>{{ staff_member.hire_date.strftime('%Y-%m-%d') }}</td>
+                        <td>{{ staff_member.user.phone or '-' }}</td>
+                        <td>
+                            {% if staff_member.user.status %}
+                            <span class="badge bg-success">在职</span>
+                            {% else %}
+                            <span class="badge bg-danger">离职</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-primary edit-staff" 
+                                    data-id="{{ staff_member.id }}"
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#editStaffModal">编辑</button>
+                            <button class="btn btn-sm btn-danger delete-staff" 
+                                    data-id="{{ staff_member.id }}">删除</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 添加员工模态框 -->
+<div class="modal fade" id="addStaffModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">添加员工</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addStaffForm">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">用户名</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">密码</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="real_name" class="form-label">真实姓名</label>
+                        <input type="text" class="form-control" id="real_name" name="real_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="employee_id" class="form-label">工号</label>
+                        <input type="text" class="form-control" id="employee_id" name="employee_id" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="department" class="form-label">部门</label>
+                        <input type="text" class="form-control" id="department" name="department" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="position" class="form-label">职位</label>
+                        <input type="text" class="form-control" id="position" name="position" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="hire_date" class="form-label">入职日期</label>
+                        <input type="date" class="form-control" id="hire_date" name="hire_date" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">联系电话</label>
+                        <input type="tel" class="form-control" id="phone" name="phone">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="saveNewStaff">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 添加员工
+    document.getElementById('saveNewStaff').addEventListener('click', async () => {
+        const form = document.getElementById('addStaffForm');
+        const formData = new FormData(form);
+        
+        try {
+            const response = await fetch('/manager/staff/add', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                location.reload();
+            } else {
+                alert('添加失败：' + result.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('添加失败');
+        }
+    });
+    
+    // 删除员工
+    document.querySelectorAll('.delete-staff').forEach(button => {
+        button.addEventListener('click', async () => {
+            if (confirm('确定要删除这个员工吗？')) {
+                const staffId = button.dataset.id;
+                try {
+                    const response = await fetch(`/manager/staff/${staffId}/delete`, {
+                        method: 'POST'
+                    });
+                    
+                    const result = await response.json();
+                    if (result.success) {
+                        button.closest('tr').remove();
+                    } else {
+                        alert('删除失败：' + result.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('删除失败');
+                }
+            }
+        });
+    });
+});
+</script>
+{% endblock %}
+{% endblock %} 

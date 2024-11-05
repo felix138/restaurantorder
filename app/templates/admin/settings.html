@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}系统设置{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>系统设置</h1>
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">基本设置</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="restaurant_name" class="form-label">餐厅名称</label>
+                            <input type="text" class="form-control" id="restaurant_name" name="restaurant_name" 
+                                   value="{{ settings.restaurant_name if settings else '' }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact_phone" class="form-label">联系电话</label>
+                            <input type="text" class="form-control" id="contact_phone" name="contact_phone"
+                                   value="{{ settings.contact_phone if settings else '' }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="business_hours" class="form-label">营业时间</label>
+                            <input type="text" class="form-control" id="business_hours" name="business_hours"
+                                   value="{{ settings.business_hours if settings else '' }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="member_discount" class="form-label">会员折扣（%）</label>
+                            <input type="number" class="form-control" id="member_discount" name="member_discount"
+                                   value="{{ settings.member_discount if settings else '90' }}" min="1" max="100">
+                        </div>
+                        <div class="mb-3">
+                            <label for="points_rate" class="form-label">积分比率（消费1元获得积分）</label>
+                            <input type="number" class="form-control" id="points_rate" name="points_rate"
+                                   value="{{ settings.points_rate if settings else '1' }}" min="0" step="0.1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">保存设置</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">其他设置</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-check">
+                            <input type="checkbox" class="form-check-input" id="enable_member"
+                                   {% if settings and settings.enable_member %}checked{% endif %}>
+                            <span class="form-check-label">启用会员系统</span>
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-check">
+                            <input type="checkbox" class="form-check-input" id="enable_points"
+                                   {% if settings and settings.enable_points %}checked{% endif %}>
+                            <span class="form-check-label">启用积分系统</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+
+{% block title %}套餐管理{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>套餐管理</h1>
+    <div class="mb-3">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSetMealModal">
+            添加套餐
+        </button>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>价格</th>
+                        <th>会员价</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for set_meal in set_meals %}
+                    <tr>
+                        <td>{{ set_meal.id }}</td>
+                        <td>{{ set_meal.name }}</td>
+                        <td>¥{{ set_meal.price }}</td>
+                        <td>¥{{ set_meal.member_price or '-' }}</td>
+                        <td>
+                            {% if set_meal.is_available %}
+                            <span class="badge bg-success">供应中</span>
+                            {% else %}
+                            <span class="badge bg-danger">已下架</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-info view-items" 
+                                    data-id="{{ set_meal.id }}"
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#viewItemsModal">查看菜品</button>
+                            <a href="{{ url_for('manager.edit_set_meal', id=set_meal.id) }}" 
+                               class="btn btn-sm btn-primary">编辑</a>
+                            <button class="btn btn-sm btn-danger delete-set-meal" 
+                                    data-id="{{ set_meal.id }}">删除</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 添加套餐模态框 -->
+<div class="modal fade" id="addSetMealModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">添加套餐</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addSetMealForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">套餐名称</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">价格</label>
+                        <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="member_price" class="form-label">会员价</label>
+                        <input type="number" class="form-control" id="member_price" name="member_price" step="0.01">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">描述</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">选择菜品</label>
+                        <div class="accordion" id="itemSelectionAccordion">
+                            {% for category in categories %}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading{{ category.id }}">
+                                    <button class="accordion-button collapsed" type="button" 
+                                            data-bs-toggle="collapse" 
+                                            data-bs-target="#collapse{{ category.id }}">
+                                        {{ category.name }}
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ category.id }}" class="accordion-collapse collapse" 
+                                     data-bs-parent="#itemSelectionAccordion">
+                                    <div class="accordion-body">
+                                        <div class="row">
+                                            {% for item in items if item.category_id == category.id %}
+                                            <div class="col-md-6 mb-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" 
+                                                           name="items" value="{{ item.id }}" 
+                                                           id="item{{ item.id }}">
+                                                    <label class="form-check-label" for="item{{ item.id }}">
+                                                        {{ item.name }} (¥{{ item.price }})
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <!-- 添加已选菜品显示区域 -->
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            <h6 class="mb-0">已选菜品</h6>
+                        </div>
+                        <div class="card-body">
+                            <div id="modalSelectedItemsList" class="row">
+                                <!-- 这里将通过JavaScript动态显示已选菜品 -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="saveNewSetMeal">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 查看菜品模态框 -->
+<div class="modal fade" id="viewItemsModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">套餐菜品</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group" id="setMealItemsList">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 添加套餐
+    document.getElementById('saveNewSetMeal').addEventListener('click', async () => {
+        const form = document.getElementById('addSetMealForm');
+        const formData = new FormData(form);
+        const selectedItems = Array.from(form.querySelectorAll('input[name="items"]:checked'))
+            .map(input => input.value);
+        
+        const data = {
+            name: formData.get('name'),
+            price: formData.get('price'),
+            member_price: formData.get('member_price'),
+            description: formData.get('description'),
+            items: selectedItems
+        };
+        
+        try {
+            const response = await fetch('/manager/set_meals/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                location.reload();
+            } else {
+                alert('添加失败：' + result.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('添加失败');
+        }
+    });
+    
+    // 查看套餐菜品
+    document.querySelectorAll('.view-items').forEach(button => {
+        button.addEventListener('click', async () => {
+            const id = button.dataset.id;
+            try {
+                const response = await fetch(`/manager/set_meals/${id}/items`);
+                const data = await response.json();
+                
+                const list = document.getElementById('setMealItemsList');
+                list.innerHTML = '';
+                
+                data.items.forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'list-group-item';
+                    li.textContent = `${item.name} × ${item.quantity}`;
+                    list.appendChild(li);
+                });
+            } catch (error) {
+                console.error('Error:', error);
+                alert('获取菜品信息失败');
+            }
+        });
+    });
+    
+    // 删除套餐
+    document.querySelectorAll('.delete-set-meal').forEach(button => {
+        button.addEventListener('click', async () => {
+            if (confirm('确定要删除这个套餐吗？')) {
+                const id = button.dataset.id;
+                try {
+                    const response = await fetch(`/manager/set_meals/${id}/delete`, {
+                        method: 'POST'
+                    });
+                    
+                    const result = await response.json();
+                    if (result.success) {
+                        button.closest('tr').remove();
+                    } else {
+                        alert('删除失败：' + result.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('删除失败');
+                }
+            }
+        });
+    });
+    
+    // 添加已选菜品显示功能
+    const modalCheckboxes = document.querySelectorAll('#addSetMealForm input[name="items"]');
+    const modalSelectedItemsList = document.getElementById('modalSelectedItemsList');
+    
+    function updateModalSelectedItems() {
+        modalSelectedItemsList.innerHTML = '';
+        let selectedCount = 0;
+        
+        modalCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                selectedCount++;
+                const label = checkbox.nextElementSibling.textContent;
+                const categoryName = checkbox.closest('.accordion-item').querySelector('.accordion-button').textContent.trim();
+                
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'col-md-4';
+                itemDiv.innerHTML = `
+                    <div class="selected-item">
+                        <div>
+                            <strong>${label}</strong><br>
+                            <small class="text-muted">${categoryName}</small>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-danger" 
+                                onclick="document.getElementById('${checkbox.id}').click()">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                `;
+                modalSelectedItemsList.appendChild(itemDiv);
+            }
+        });
+        
+        if (selectedCount === 0) {
+            modalSelectedItemsList.innerHTML = '<div class="col-12 text-center text-muted">未选择任何菜品</div>';
+        }
+    }
+    
+    // 监听复选框变化
+    modalCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateModalSelectedItems);
+    });
+    
+    // 初始显示
+    updateModalSelectedItems();
+    
+    // 添加保存前的验证
+    document.getElementById('saveNewSetMeal').addEventListener('click', function(e) {
+        const selectedItems = document.querySelectorAll('#addSetMealForm input[name="items"]:checked');
+        if (selectedItems.length === 0) {
+            alert('请至少选择一个菜品');
+            return;
+        }
+        // ... 保持原有的保存逻辑不变 ...
+    });
+});
+</script>
+{% endblock %}
+{% endblock %} 

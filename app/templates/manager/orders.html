@@ -1,0 +1,444 @@
+{% extends "base.html" %}
+
+{% block title %}订单管理{% endblock %}
+
+{% block styles %}
+<style>
+.filter-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+.status-filter button {
+    margin-right: 5px;
+}
+.order-details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.order-item {
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px 0;
+}
+.order-item:last-child {
+    border-bottom: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal.show {
+    display: block;
+}
+.home-button {
+    margin-bottom: 20px;
+}
+
+/* Tooltip 样式 */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-content {
+    visibility: hidden;
+    width: 300px;
+    background-color: white;
+    color: #333;
+    text-align: left;
+    border-radius: 6px;
+    padding: 0;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+}
+
+.tooltip:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-header {
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 6px 6px 0 0;
+}
+
+.tooltip-body {
+    padding: 15px;
+}
+
+.tooltip-body p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.tooltip-items {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #dee2e6;
+}
+
+.tooltip-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    font-size: 0.9em;
+}
+
+.tooltip-total {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #dee2e6;
+    text-align: right;
+    font-size: 1.1em;
+}
+
+/* 添加三角形指示器 */
+.tooltip .tooltip-content::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+/* 按钮样式优化 */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0 2px;
+    transition: all 0.2s ease;
+}
+
+.btn i {
+    font-size: 1.1em;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 状态标签样式 */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: normal;
+}
+
+/* 按钮组样式 */
+.btn-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* 查看详情按钮样式 */
+.btn-info {
+    position: relative;
+    padding: 0.25rem 0.5rem;
+}
+
+.btn-info:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 工具提示样式优化 */
+.tooltip-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.tooltip-content::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">订单管理</h1>
+
+    <!-- 筛选区域 -->
+    <div class="filter-section">
+        <div class="row">
+            <div class="col-md-8 status-filter">
+                <button type="button" class="btn btn-outline-primary active" data-status="all">全部</button>
+                <button type="button" class="btn btn-outline-warning" data-status="pending">待处理</button>
+                <button type="button" class="btn btn-outline-info" data-status="processing">处理中</button>
+                <button type="button" class="btn btn-outline-success" data-status="completed">已完成</button>
+                <button type="button" class="btn btn-outline-danger" data-status="cancelled">已取消</button>
+            </div>
+            <div class="col-md-4">
+                <input type="date" class="form-control" id="dateFilter">
+            </div>
+        </div>
+    </div>
+
+    <!-- 订单列表 -->
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>订单号</th>
+                        <th>桌号</th>
+                        <th>服务员</th>
+                        <th>总金额</th>
+                        <th>实付金额</th>
+                        <th>状态</th>
+                        <th>支付状态</th>
+                        <th>创建时</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr class="order-row" data-status="{{ order.status }}" data-date="{{ order.created_at.strftime('%Y-%m-%d') }}">
+                        <td>{{ order.order_number }}</td>
+                        <td>{{ order.table_number }}</td>
+                        <td>{{ order.staff.user.real_name or order.staff.user.username }}</td>
+                        <td>¥{{ order.total_amount }}</td>
+                        <td>¥{{ order.actual_amount }}</td>
+                        <td>
+                            {% if order.status == 'pending' %}
+                            <span class="badge bg-warning">待处理</span>
+                            {% elif order.status == 'processing' %}
+                            <span class="badge bg-info">处理中</span>
+                            {% elif order.status == 'completed' %}
+                            <span class="badge bg-success">已完成</span>
+                            {% else %}
+                            <span class="badge bg-danger">已取消</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if order.payment_status == 'unpaid' %}
+                            <span class="badge bg-danger">未支付</span>
+                            {% elif order.payment_status == 'paid' %}
+                            <span class="badge bg-success">已支付</span>
+                            {% else %}
+                            <span class="badge bg-warning">已退款</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ order.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <!-- 查看详情按钮 -->
+                                <button class="btn btn-sm btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="查看详情">
+                                    <i class="bi bi-info-circle"></i>
+                                    <div class="tooltip-content">
+                                        <div class="tooltip-header">
+                                            <strong>订单详情</strong>
+                                        </div>
+                                        <div class="tooltip-body">
+                                            <p><strong>订单号：</strong>{{ order.order_number }}</p>
+                                            <p><strong>桌号：</strong>{{ order.table_number }}</p>
+                                            <p><strong>服务员：</strong>{{ order.staff.user.real_name or order.staff.user.username }}</p>
+                                            <p><strong>下单时间：</strong>{{ order.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                                            <div class="tooltip-items">
+                                                <strong>订单内容：</strong>
+                                                {% for item in order_details[order.id] %}
+                                                <div class="tooltip-item">
+                                                    {{ item.name }} × {{ item.quantity }}
+                                                    <span class="item-price">¥{{ item.actual_price }}</span>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="tooltip-total">
+                                                <strong>总计：</strong>¥{{ order.total_amount }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+
+                                <!-- 状态操作按钮 -->
+                                {% if order.status == 'pending' %}
+                                <button class="btn btn-sm btn-success update-status" 
+                                        data-id="{{ order.id }}" 
+                                        data-status="processing">
+                                    <i class="bi bi-play-fill"></i> 接单
+                                </button>
+                                {% elif order.status == 'processing' %}
+                                <button class="btn btn-sm btn-success update-status" 
+                                        data-id="{{ order.id }}" 
+                                        data-status="completed">
+                                    <i class="bi bi-check-lg"></i> 完成
+                                </button>
+                                {% endif %}
+                                {% if order.status != 'completed' and order.status != 'cancelled' %}
+                                <button class="btn btn-sm btn-danger update-status" 
+                                        data-id="{{ order.id }}" 
+                                        data-status="cancelled">
+                                    <i class="bi bi-x-lg"></i> 取消
+                                </button>
+                                {% endif %}
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 订单详情模态框 -->
+<div class="modal" id="orderDetailsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">订单详情</h5>
+                <button type="button" class="btn-close" onclick="closeModal()"></button>
+            </div>
+            <div class="modal-body" id="orderDetailsContent">
+                <!-- 订单详情将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+// 等待 DOM 加载完成
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded', new Date().toISOString());
+    
+    // 状态筛选
+    const statusButtons = document.querySelectorAll('.status-filter button');
+    statusButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            console.log('Status button clicked:', this.dataset.status);
+            statusButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const selectedStatus = this.dataset.status;
+            const orderRows = document.querySelectorAll('.order-row');
+            orderRows.forEach(row => {
+                if (selectedStatus === 'all' || row.dataset.status === selectedStatus) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // 更新订单状态
+    const updateButtons = document.querySelectorAll('.update-status');
+    updateButtons.forEach(button => {
+        button.addEventListener('click', async function() {
+            console.log('Update button clicked');
+            if (!confirm('确定要更新订单状态吗？')) return;
+            
+            const orderId = this.dataset.id;
+            const newStatus = this.dataset.status;
+            
+            try {
+                const response = await fetch(`/manager/orders/${orderId}/status`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ status: newStatus })
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    location.reload();
+                } else {
+                    alert('更新失败：' + result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('更新失败');
+            }
+        });
+    });
+
+    // 日期筛选
+    const dateFilter = document.getElementById('dateFilter');
+    if (dateFilter) {
+        dateFilter.addEventListener('change', function() {
+            const selectedDate = this.value;
+            const orderRows = document.querySelectorAll('.order-row');
+            
+            orderRows.forEach(row => {
+                const orderDate = row.dataset.date;
+                if (!selectedDate || orderDate === selectedDate) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // 订单详情按钮点击事件
+    const detailButtons = document.querySelectorAll('.btn-info');
+    detailButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            // 不需要做任何事情，因为我们使用的是悬浮显示
+        });
+    });
+
+    // 关闭模态框
+    window.closeModal = function() {
+        const modal = document.getElementById('orderDetailsModal');
+        if (modal) {
+            modal.style.display = 'none';
+            modal.classList.remove('show');
+        }
+    };
+
+    // 点击模态框外部关闭
+    window.addEventListener('click', function(e) {
+        const modal = document.getElementById('orderDetailsModal');
+        if (modal && e.target === modal) {
+            closeModal();
+        }
+    });
+});
+</script>
+{% endblock %}
+{% endblock %} 

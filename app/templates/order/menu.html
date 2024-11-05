@@ -1,0 +1,419 @@
+{% extends "base.html" %}
+
+{% block title %}点餐{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- 左侧区域（包含导航栏和内容） -->
+        <div class="col-md-8">
+            <!-- 顶部导航栏 -->
+            <ul class="nav nav-pills mb-4">
+                {% for category in categories %}
+                <li class="nav-item">
+                    <button class="nav-link {% if loop.first %}active{% endif %}" 
+                            data-bs-toggle="tab" 
+                            data-bs-target="#category-{{ category.id }}">
+                        {{ category.name }}
+                    </button>
+                </li>
+                {% endfor %}
+                <li class="nav-item">
+                    <button class="nav-link" 
+                            data-bs-toggle="tab" 
+                            data-bs-target="#set-meals">
+                        套餐
+                    </button>
+                </li>
+            </ul>
+
+            <!-- 内容区域 -->
+            <div class="tab-content">
+                <!-- 分类菜品内容 -->
+                {% for category in categories %}
+                <div class="tab-pane fade {% if loop.first %}show active{% endif %}" 
+                     id="category-{{ category.id }}">
+                    <div class="row">
+                        {% for item in items if item.category_id == category.id %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                {% if item.image_url %}
+                                <img src="{{ item.image_url }}" class="card-img-top" alt="{{ item.name }}">
+                                {% endif %}
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ item.name }}</h5>
+                                    <p class="card-text">{{ item.description or '' }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="text-danger h5">¥{{ "%.2f"|format(item.price) }}</span>
+                                            {% if item.member_price %}
+                                            <small class="text-muted">会员价：¥{{ "%.2f"|format(item.member_price) }}</small>
+                                            {% endif %}
+                                        </div>
+                                        <button class="btn btn-primary btn-sm add-item" 
+                                                data-id="{{ item.id }}"
+                                                data-name="{{ item.name }}"
+                                                data-price="{{ item.price }}"
+                                                data-member-price="{{ item.member_price or '' }}">
+                                            加入购物车
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- 套餐部分 -->
+                <div class="tab-pane fade" id="set-meals">
+                    <div class="row">
+                        {% for set_meal in set_meals %}
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ set_meal.name }}</h5>
+                                    {% if set_meal.description %}
+                                    <p class="card-text text-muted">{{ set_meal.description }}</p>
+                                    {% endif %}
+                                    <div class="mb-3">
+                                        <strong>套餐内容：</strong>
+                                        <ul class="list-unstyled">
+                                            {% for item in set_meal.items %}
+                                            {% if item.item and item.item.is_available %}
+                                            <li>
+                                                {{ item.item.name }} × {{ item.quantity }}
+                                                <small class="text-muted">(原价: ¥{{ "%.2f"|format(item.item.price) }})</small>
+                                            </li>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="text-danger h5">¥{{ "%.2f"|format(set_meal.price) }}</span>
+                                            {% if set_meal.member_price %}
+                                            <small class="text-muted ms-2">
+                                                会员：¥{{ "%.2f"|format(set_meal.member_price) }}
+                                            </small>
+                                            {% endif %}
+                                        </div>
+                                        <button class="btn btn-primary btn-sm add-set-meal" 
+                                                data-id="{{ set_meal.id }}"
+                                                data-name="{{ set_meal.name }}"
+                                                data-price="{{ set_meal.price }}"
+                                                data-member-price="{{ set_meal.member_price or '' }}">
+                                            加入购物车
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧购物车区域 - 移到与导航栏同一行 -->
+        <div class="col-md-4">
+            <div class="card sticky-top" style="top: 1rem;">  <!-- 添加 sticky-top 使购物车固定 -->
+                <div class="card-header">
+                    <h5 class="mb-0">购物车</h5>
+                </div>
+                <div class="card-body">
+                    <!-- 桌号输入区域 -->
+                    <div class="mb-3">
+                        <label for="tableNumber" class="form-label">桌号</label>
+                        <input type="number" class="form-control mb-2" id="tableNumber" required readonly>
+                        <!-- 添加数字键盘 -->
+                        <div class="number-pad">
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="1">1</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="2">2</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="3">3</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="4">4</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="5">5</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="6">6</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="7">7</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="8">8</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="9">9</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-danger w-100" id="clearNumber">清除</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-secondary w-100 number-btn" data-number="0">0</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-outline-primary w-100" id="confirmNumber">确认</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 其他购物车内容保持不变 -->
+                    <div id="cartItems">
+                        <!-- 购物车项目将通过 JavaScript 动态添加 -->
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>总计：</span>
+                        <span class="text-danger h5" id="totalAmount">¥0.00</span>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" id="submitOrder">提交订单</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.nav-pills {
+    flex-wrap: wrap;  /* 允许导航项换行 */
+    gap: 0.5rem;  /* 设置导航项之间的间距 */
+}
+
+.nav-pills .nav-link {
+    color: #ffffff;
+    background-color: #6c7293;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    font-family: "STKaiti", "华文楷体", KaiTi, "楷体", sans-serif;
+    font-weight: bold;
+    margin-bottom: 0.25rem;  /* 添加底部间距 */
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #4e73df;
+    color: #ffffff;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #4e73df;
+    color: #ffffff;
+}
+
+.card {
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2e59d9;
+}
+
+/* 数字键盘样式 */
+.number-pad {
+    margin-bottom: 1rem;
+}
+
+.number-pad .btn {
+    height: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.number-pad .btn:hover {
+    transform: scale(0.98);
+}
+
+/* 设置输入框为只读样式 */
+#tableNumber {
+    background-color: #fff;
+    cursor: default;
+}
+</style>
+
+<!-- 添加购物车相关的 JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let cart = [];
+    const cartItems = document.getElementById('cartItems');
+    const totalAmount = document.getElementById('totalAmount');
+    
+    // 添加菜品到购物车
+    document.querySelectorAll('.add-item').forEach(button => {
+        button.addEventListener('click', function() {
+            const id = this.dataset.id;
+            const name = this.dataset.name;
+            const price = parseFloat(this.dataset.price);
+            
+            addToCart({
+                id: id,
+                name: name,
+                price: price,
+                quantity: 1,
+                type: 'item'
+            });
+        });
+    });
+    
+    // 添加套餐到购物车
+    document.querySelectorAll('.add-set-meal').forEach(button => {
+        button.addEventListener('click', function() {
+            const id = this.dataset.id;
+            const name = this.dataset.name;
+            const price = parseFloat(this.dataset.price);
+            
+            addToCart({
+                id: id,
+                name: name,
+                price: price,
+                quantity: 1,
+                type: 'set_meal'
+            });
+        });
+    });
+    
+    // 添加到购物车函数
+    function addToCart(item) {
+        const existingItem = cart.find(i => i.id === item.id && i.type === item.type);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push(item);
+        }
+        updateCartDisplay();
+    }
+    
+    // 更新购物车显示
+    function updateCartDisplay() {
+        cartItems.innerHTML = '';
+        let total = 0;
+        
+        cart.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'd-flex justify-content-between align-items-center mb-2';
+            itemDiv.innerHTML = `
+                <div>
+                    <span>${item.name}</span>
+                    <small class="text-muted">×${item.quantity}</small>
+                </div>
+                <div>
+                    <span class="me-2">¥${(item.price * item.quantity).toFixed(2)}</span>
+                    <button class="btn btn-sm btn-outline-danger remove-item" data-index="${index}">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            `;
+            cartItems.appendChild(itemDiv);
+            total += item.price * item.quantity;
+        });
+        
+        totalAmount.textContent = `¥${total.toFixed(2)}`;
+        
+        // 添加删除事件监听器
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = parseInt(this.dataset.index);
+                cart.splice(index, 1);
+                updateCartDisplay();
+            });
+        });
+    }
+    
+    // 提交订单
+    document.getElementById('submitOrder').addEventListener('click', async function() {
+        const tableNumber = document.getElementById('tableNumber').value;
+        if (!tableNumber) {
+            alert('请输入桌号');
+            return;
+        }
+        
+        if (cart.length === 0) {
+            alert('购物车为空');
+            return;
+        }
+        
+        try {
+            const response = await fetch('/staff/submit_order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    table_number: tableNumber,
+                    items: cart
+                })
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                alert('订单提交成功');
+                cart = [];
+                updateCartDisplay();
+                document.getElementById('tableNumber').value = '';
+            } else {
+                alert('订单提交失败：' + result.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('订单提交失败');
+        }
+    });
+
+    // 数字键盘处理
+    const tableNumber = document.getElementById('tableNumber');
+    
+    // 数字按钮点击事件
+    document.querySelectorAll('.number-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const number = this.dataset.number;
+            const currentValue = tableNumber.value;
+            tableNumber.value = currentValue + number;
+        });
+    });
+    
+    // 清除按钮
+    document.getElementById('clearNumber').addEventListener('click', function() {
+        tableNumber.value = '';
+    });
+    
+    // 确认按钮
+    document.getElementById('confirmNumber').addEventListener('click', function() {
+        // 可以添加确认逻辑，比如验证桌号是否有效
+        if (!tableNumber.value) {
+            alert('请输入桌号');
+        }
+    });
+});
+</script>
+{% endblock %} 

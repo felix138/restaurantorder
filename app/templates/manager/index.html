@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}经理控制台{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>经理控制台</h1>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">菜品管理</h5>
+                    <p class="card-text">管理菜品信息和价格</p>
+                    <a href="{{ url_for('manager.items') }}" class="btn btn-primary">管理菜品</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">套餐管理</h5>
+                    <p class="card-text">管理套餐组合和价格</p>
+                    <a href="{{ url_for('manager.set_meals') }}" class="btn btn-primary">管理套餐</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">分类管理</h5>
+                    <p class="card-text">管理菜品分类</p>
+                    <a href="{{ url_for('manager.categories') }}" class="btn btn-primary">管理分类</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">员工管理</h5>
+                    <p class="card-text">管理员工信息</p>
+                    <a href="{{ url_for('manager.staff') }}" class="btn btn-primary">管理员工</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">销售报表</h5>
+                    <p class="card-text">查看销售统计和报表</p>
+                    <a href="{{ url_for('manager.reports') }}" class="btn btn-primary">查看报表</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">订单管理</h5>
+                    <p class="card-text">查看和管理订单</p>
+                    <a href="{{ url_for('manager.orders') }}" class="btn btn-primary">管理订单</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

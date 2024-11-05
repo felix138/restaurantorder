@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}菜单{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>菜单</h1>
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <!-- 分类导航 -->
+            <div class="list-group">
+                {% for category in categories %}
+                <a href="#category-{{ category.id }}" 
+                   class="list-group-item list-group-item-action {% if loop.first %}active{% endif %}"
+                   data-bs-toggle="list">
+                    {{ category.name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-9">
+            <!-- 菜品列表 -->
+            <div class="tab-content">
+                {% for category in categories %}
+                <div class="tab-pane fade {% if loop.first %}show active{% endif %}" 
+                     id="category-{{ category.id }}">
+                    <div class="row">
+                        {% for item in items if item.category_id == category.id %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                {% if item.image_url %}
+                                <img src="{{ item.image_url }}" class="card-img-top" alt="{{ item.name }}">
+                                {% endif %}
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ item.name }}</h5>
+                                    <p class="card-text">
+                                        {% if item.description %}
+                                        <small class="text-muted">{{ item.description }}</small><br>
+                                        {% endif %}
+                                        <strong>价格: ¥{{ item.price }}</strong><br>
+                                        {% if item.member_price %}
+                                        <small class="text-success">会员价: ¥{{ item.member_price }}</small>
+                                        {% endif %}
+                                    </p>
+                                    <div class="text-muted">
+                                        <small>
+                                            {% if item.is_available %}
+                                            <span class="text-success">供应中</span>
+                                            {% else %}
+                                            <span class="text-danger">已售罄</span>
+                                            {% endif %}
+                                            
+                                            {% if item.stock_quantity >= 0 %}
+                                            | 库存: {{ item.stock_quantity }}
+                                            {% endif %}
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 激活 Bootstrap 的 tab 功能
+    var triggerTabList = [].slice.call(document.querySelectorAll('.list-group-item'))
+    triggerTabList.forEach(function(triggerEl) {
+        new bootstrap.Tab(triggerEl)
+    })
+});
+</script>
+{% endblock %} 

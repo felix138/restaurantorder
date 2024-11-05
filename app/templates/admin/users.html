@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}用户管理{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>用户管理</h1>
+    <div class="mb-3">
+        <a href="{{ url_for('admin.add_user') }}" class="btn btn-primary">添加用户</a>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>用户名</th>
+                        <th>真实姓名</th>
+                        <th>角色</th>
+                        <th>电话</th>
+                        <th>邮箱</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.real_name or '-' }}</td>
+                        <td>{{ user.role.name }}</td>
+                        <td>{{ user.phone or '-' }}</td>
+                        <td>{{ user.email or '-' }}</td>
+                        <td>
+                            {% if user.status %}
+                            <span class="badge bg-success">启用</span>
+                            {% else %}
+                            <span class="badge bg-danger">禁用</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('admin.edit_user', id=user.id) }}" class="btn btn-sm btn-primary">
+                                <i class="bi bi-pencil"></i> 编辑
+                            </a>
+                            {% if user.id != current_user.id %}
+                            <button class="btn btn-sm btn-danger">禁用</button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %} 

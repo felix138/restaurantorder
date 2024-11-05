@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}菜品管理{% endblock %}
+
+{% block styles %}
+<style>
+.item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.item-image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>菜品管理</h1>
+    <div class="row mb-3">
+        <div class="col-md-8">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary active" data-category="all">全部</button>
+                {% for category in categories %}
+                <button type="button" class="btn btn-outline-primary" 
+                        data-category="{{ category.id }}">{{ category.name }}</button>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="{{ url_for('manager.add_item') }}" class="btn btn-primary">添加菜品</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table class="table" id="items-table">
+                <thead>
+                    <tr>
+                        <th>图片</th>
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>分类</th>
+                        <th>价格</th>
+                        <th>会员价</th>
+                        <th>库存</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr data-category="{{ item.category_id }}">
+                        <td>
+                            {% if item.image_url %}
+                            <img src="{{ item.image_url }}" class="item-image" alt="{{ item.name }}"
+                                 onclick="showImagePreview('{{ item.image_url }}', '{{ item.name }}')"
+                                 style="width: 50px; height: 50px; object-fit: cover; cursor: pointer;">
+                            {% else %}
+                            <div class="item-image bg-light d-flex align-items-center justify-content-center"
+                                 style="width: 50px; height: 50px;">
+                                <span class="text-muted">无图片</span>
+                            </div>
+                            {% endif %}
+                        </td>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.category.name }}</td>
+                        <td>¥{{ item.price }}</td>
+                        <td>¥{{ item.member_price or '-' }}</td>
+                        <td>{{ item.stock_quantity if item.stock_quantity >= 0 else '无限' }}</td>
+                        <td>
+                            {% if item.is_available %}
+                            <span class="badge bg-success">供应中</span>
+                            {% else %}
+                            <span class="badge bg-danger">已下架</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('manager.edit_item', id=item.id) }}" class="btn btn-sm btn-primary">编辑</a>
+                            <button class="btn btn-sm btn-danger delete-item" data-id="{{ item.id }}">删除</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 图片预览模态框 -->
+<div class="modal fade" id="imagePreviewModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="" class="item-image-preview" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+// 图片预览功能
+function showImagePreview(imageUrl, itemName) {
+    const modal = document.getElementById('imagePreviewModal');
+    const modalTitle = modal.querySelector('.modal-title');
+    const modalImage = modal.querySelector('.item-image-preview');
+    
+    modalTitle.textContent = itemName;
+    modalImage.src = imageUrl;
+    
+    // 显示模态框
+    modal.style.display = 'block';
+    modal.classList.add('show');
+}
+
+// 关闭模态框
+document.querySelector('#imagePreviewModal .btn-close').onclick = function() {
+    const modal = document.getElementById('imagePreviewModal');
+    modal.style.display = 'none';
+    modal.classList.remove('show');
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 分类筛选功能
+    const categoryButtons = document.querySelectorAll('[data-category]');
+    const itemRows = document.querySelectorAll('#items-table tbody tr');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 更新按钮状态
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            const selectedCategory = button.dataset.category;
+            
+            // 显示/隐藏对应的行
+            itemRows.forEach(row => {
+                if (selectedCategory === 'all' || row.dataset.category === selectedCategory) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // 删除功能
+    const deleteButtons = document.querySelectorAll('.delete-item');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            if (confirm('确定要删除这个菜品吗？')) {
+                const itemId = button.dataset.id;
+                try {
+                    const response = await fetch(`/manager/items/${itemId}/delete`, {
+                        method: 'POST'
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        button.closest('tr').remove();
+                    } else {
+                        alert('删除失败：' + result.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('删除失败');
+                }
+            }
+        });
+    });
+});
+</script>
+{% endblock %}
+{% endblock %} 

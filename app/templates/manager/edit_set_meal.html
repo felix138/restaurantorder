@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block title %}编辑套餐{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">编辑套餐</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">套餐名称</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ set_meal.name }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">价格</label>
+                            <input type="number" class="form-control" id="price" name="price" 
+                                   value="{{ set_meal.price }}" step="0.01" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="member_price" class="form-label">会员价</label>
+                            <input type="number" class="form-control" id="member_price" name="member_price" 
+                                   value="{{ set_meal.member_price }}" step="0.01">
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">描述</label>
+                            <textarea class="form-control" id="description" name="description" rows="3">{{ set_meal.description }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">选择菜品</label>
+                            <div class="accordion" id="itemSelectionAccordion">
+                                {% for category in categories %}
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading{{ category.id }}">
+                                        <button class="accordion-button collapsed" type="button" 
+                                                data-bs-toggle="collapse" 
+                                                data-bs-target="#collapse{{ category.id }}">
+                                            {{ category.name }}
+                                        </button>
+                                    </h2>
+                                    <div id="collapse{{ category.id }}" class="accordion-collapse collapse" 
+                                         data-bs-parent="#itemSelectionAccordion">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                {% for item in items if item.category_id == category.id %}
+                                                <div class="col-md-6 mb-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                               name="items" value="{{ item.id }}" 
+                                                               id="item{{ item.id }}"
+                                                               {% if item.id in selected_items %}checked{% endif %}>
+                                                        <label class="form-check-label" for="item{{ item.id }}">
+                                                            {{ item.name }} (¥{{ item.price }})
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="is_available" name="is_available" 
+                                       {% if set_meal.is_available %}checked{% endif %}>
+                                <label class="form-check-label" for="is_available">是否可用</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">保存</button>
+                            <a href="{{ url_for('manager.set_meals') }}" class="btn btn-secondary">返回</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 在表单底部添加已选菜品显示区域 -->
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">已选菜品</h5>
+        </div>
+        <div class="card-body">
+            <div id="selectedItemsList" class="row">
+                <!-- 这里将通过JavaScript动态显示已选菜品 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.accordion-button:not(.collapsed) {
+    background-color: #e7f1ff;
+    color: #0c63e4;
+}
+.form-check {
+    padding: 10px;
+    border-radius: 5px;
+}
+.form-check:hover {
+    background-color: #f8f9fa;
+}
+.selected-item {
+    padding: 10px;
+    margin: 5px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+</style>
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const checkboxes = document.querySelectorAll('input[name="items"]');
+    const selectedItemsList = document.getElementById('selectedItemsList');
+    
+    function updateSelectedItems() {
+        selectedItemsList.innerHTML = '';
+        let selectedCount = 0;
+        
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                selectedCount++;
+                const label = checkbox.nextElementSibling.textContent;
+                const categoryName = checkbox.closest('.accordion-item').querySelector('.accordion-button').textContent.trim();
+                
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'col-md-4';
+                itemDiv.innerHTML = `
+                    <div class="selected-item">
+                        <div>
+                            <strong>${label}</strong><br>
+                            <small class="text-muted">${categoryName}</small>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-danger" 
+                                onclick="document.getElementById('item${checkbox.value}').click()">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                `;
+                selectedItemsList.appendChild(itemDiv);
+            }
+        });
+        
+        if (selectedCount === 0) {
+            selectedItemsList.innerHTML = '<div class="col-12 text-center text-muted">未选择任何菜品</div>';
+        }
+    }
+    
+    // 初始显示已选菜品
+    updateSelectedItems();
+    
+    // 监听复选框变化
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateSelectedItems);
+    });
+    
+    // 表单提交前的验证
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        const selectedItems = document.querySelectorAll('input[name="items"]:checked');
+        if (selectedItems.length === 0) {
+            e.preventDefault();
+            alert('请至少选择一个菜品');
+        }
+    });
+});
+</script>
+{% endblock %}
+{% endblock %} 

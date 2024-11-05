@@ -1,0 +1,747 @@
+2024-11-02 02:42:16,767 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 02:42:16,770 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 02:42:27,036 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:42:27] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:42:27,047 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:42:27] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:42:34,918 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:42:34] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:42:39,780 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:42:39] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:43:00,028 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:43:00] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 02:43:03,244 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:43:03] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 02:43:10,989 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:43:10] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 02:43:15,911 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:43:15] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:45:03,035 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:45:03] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:45:05,265 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:45:05] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:45:10,997 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:45:10] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:45:11,001 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:45:11] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:45:11,611 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:45:11] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:45:11,616 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:45:11] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:45:12,466 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:45:12] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 02:45:15,271 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:45:15] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:47:08,587 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:47:08] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:48:29,341 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:29] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:48:30,658 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:30] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:48:31,675 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:31] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 02:48:36,094 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:36] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 02:48:38,795 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:38] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 02:48:38,799 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:38] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:48:38,804 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:38] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:48:43,222 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:43] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:48:45,560 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:45] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 02:48:45,564 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:45] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:48:45,569 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:45] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:48:50,318 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:50] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:48:57,303 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:57] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 02:48:57,309 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:57] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:48:57,315 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:48:57] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:50:02,259 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\manager.py', reloading
+2024-11-02 02:50:02,663 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 02:50:02,665 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 02:50:04,686 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:50:04] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:50:06,481 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:50:06] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 02:50:06,486 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:50:06] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:50:06,491 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:50:06] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:51:09,440 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\manager.py', reloading
+2024-11-02 02:51:09,808 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 02:51:09,810 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 02:51:17,922 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 02:51:17,922 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 02:51:17,923 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 02:51:18,227 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 02:51:18,229 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 02:51:19,958 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:51:19] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 02:51:19,964 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:51:19] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:51:19,980 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:51:19] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:52:31,124 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\models\\order.py', reloading
+2024-11-02 02:52:31,162 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 02:52:31,479 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 02:52:31,481 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 02:52:38,874 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:38] "[35m[1mGET /staff/ HTTP/1.1[0m" 500 -
+2024-11-02 02:52:39,024 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:39] "GET /staff/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-11-02 02:52:39,024 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:39] "GET /staff/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-11-02 02:52:39,035 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:39] "GET /staff/?__debugger__=yes&cmd=resource&f=console.png&s=wPLJxFUuy73D0UoDMwh9 HTTP/1.1" 200 -
+2024-11-02 02:52:39,062 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:39] "GET /staff/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-11-02 02:52:45,800 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:45] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-11-02 02:52:45,814 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:45] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-11-02 02:52:45,815 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:45] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-11-02 02:52:45,829 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:45] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=wPLJxFUuy73D0UoDMwh9 HTTP/1.1" 200 -
+2024-11-02 02:52:45,892 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:52:45] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-11-02 02:52:58,564 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 02:52:58,564 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 02:52:58,565 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 02:52:58,874 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 02:52:58,876 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 02:53:03,107 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:53:03] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-11-02 02:53:03,258 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:53:03] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-02 02:53:03,258 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:53:03] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-02 02:53:03,267 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:53:03] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=cUG7cAdc4WauCagVMRAm HTTP/1.1" 200 -
+2024-11-02 02:53:03,289 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:53:03] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-11-02 02:54:00,631 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\models\\order.py', reloading
+2024-11-02 02:54:00,668 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 02:54:01,017 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 02:54:01,019 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 02:54:02,792 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:02] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-11-02 02:54:02,944 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:02] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-02 02:54:02,944 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:02] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-02 02:54:02,954 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:02] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=Uv9rDO2S9Cccw38tVdVq HTTP/1.1" 200 -
+2024-11-02 02:54:02,980 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:02] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-11-02 02:54:03,995 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:03] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-11-02 02:54:04,007 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:04] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-02 02:54:04,007 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:04] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-02 02:54:04,020 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:04] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=Uv9rDO2S9Cccw38tVdVq HTTP/1.1[0m" 304 -
+2024-11-02 02:54:04,042 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:04] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-11-02 02:54:11,055 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 02:54:11,056 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 02:54:11,056 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 02:54:11,364 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 02:54:11,366 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 02:54:14,099 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-11-02 02:54:14,243 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:14] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-02 02:54:14,243 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:14] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-02 02:54:14,253 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:14] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=lGWwn2uoftNc2VqJgu33 HTTP/1.1" 200 -
+2024-11-02 02:54:14,274 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:54:14] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-11-02 02:55:04,025 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\models\\order.py', reloading
+2024-11-02 02:55:04,063 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 02:55:04,377 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 02:55:04,379 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 02:55:09,473 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:55:09] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:55:09,484 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:55:09] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:55:12,658 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:55:12] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 02:55:28,501 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:55:28] "POST /manager/orders/4/status HTTP/1.1" 200 -
+2024-11-02 02:55:28,518 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:55:28] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 02:55:32,018 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:55:32] "POST /manager/orders/3/status HTTP/1.1" 200 -
+2024-11-02 02:55:32,037 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:55:32] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 02:56:00,650 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:00] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:56:00,655 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:00] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:56:01,723 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:01] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 02:56:04,207 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:04] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 02:56:10,393 - root - INFO - Received order data: {'table_number': '1', 'total_amount': 46, 'actual_amount': 46, 'items': [{'id': 2, 'quantity': 1, 'price': 24, 'actual_price': 24}, {'id': 3, 'quantity': 1, 'price': 22, 'actual_price': 22}]}
+2024-11-02 02:56:10,414 - root - INFO - Order created successfully: 5
+2024-11-02 02:56:10,415 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:10] "POST /staff/take_order HTTP/1.1" 200 -
+2024-11-02 02:56:12,933 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:12] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:56:12,938 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:12] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:56:14,063 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:14] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 02:56:45,146 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:45] "GET /manager/orders/5/details HTTP/1.1" 200 -
+2024-11-02 02:56:59,216 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:56:59] "GET /manager/orders/5/details HTTP/1.1" 200 -
+2024-11-02 02:57:04,590 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:57:04] "GET /manager/orders/4/details HTTP/1.1" 200 -
+2024-11-02 02:58:56,381 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:58:56] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 02:59:01,047 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:01] "GET /manager/orders/5/details HTTP/1.1" 200 -
+2024-11-02 02:59:14,520 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:14] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:59:14,525 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:14] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:59:15,650 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:15] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 02:59:27,657 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:27] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:59:27,672 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:27] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:59:29,077 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:29] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 02:59:39,793 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:39] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 02:59:54,828 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:54] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 02:59:54,833 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:54] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 02:59:56,003 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 02:59:56] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 03:00:15,682 - root - INFO - Received order data: {'table_number': '5', 'total_amount': 100, 'actual_amount': 100, 'items': [{'id': 17, 'quantity': 1, 'price': 100, 'actual_price': 100}]}
+2024-11-02 03:00:15,697 - root - INFO - Order created successfully: 6
+2024-11-02 03:00:15,698 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:15] "POST /staff/take_order HTTP/1.1" 200 -
+2024-11-02 03:00:17,821 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:17] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 03:00:17,826 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:17] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 03:00:20,875 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:20] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 03:00:34,192 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:34] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 03:00:34,196 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:34] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 03:00:38,850 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:38] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 03:00:38,855 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:38] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 03:00:41,568 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:41] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 03:00:44,931 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:44] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 03:00:47,038 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:47] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-02 03:00:47,041 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:47] "GET /login HTTP/1.1" 200 -
+2024-11-02 03:00:54,614 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:54] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 03:00:54,618 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:54] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 03:00:54,623 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:54] "GET /manager/ HTTP/1.1" 200 -
+2024-11-02 03:00:57,339 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:00:57] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:01:40,516 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:01:40] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-02 03:01:40,518 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:01:40] "GET /login HTTP/1.1" 200 -
+2024-11-02 03:01:43,986 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:01:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 03:01:43,990 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:01:43] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 03:01:43,995 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:01:43] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 03:01:46,856 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:01:46] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 03:02:56,115 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\models\\item.py', reloading
+2024-11-02 03:02:56,160 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 03:02:56,478 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 03:02:56,480 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 03:03:00,452 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:03:00] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-02 03:03:00,459 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:03:00] "GET /login HTTP/1.1" 200 -
+2024-11-02 03:03:05,102 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:03:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 03:03:05,106 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:03:05] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 03:03:05,111 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:03:05] "GET /manager/ HTTP/1.1" 200 -
+2024-11-02 03:03:07,640 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:03:07] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:03:09,488 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:03:09] "GET /manager/items/1/edit HTTP/1.1" 200 -
+2024-11-02 03:03:28,079 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:03:28] "GET /manager/items/add HTTP/1.1" 200 -
+2024-11-02 03:05:56,608 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 03:05:56,608 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 03:05:56,609 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 03:05:56,914 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 03:05:56,916 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 03:06:02,254 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:06:02] "GET /manager/items/add HTTP/1.1" 200 -
+2024-11-02 03:06:30,757 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:06:30] "[32mPOST /manager/items/add HTTP/1.1[0m" 302 -
+2024-11-02 03:06:30,768 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:06:30] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:06:30,857 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:06:30] "GET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1" 200 -
+2024-11-02 03:06:51,239 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:06:51] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:06:51,248 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:06:51] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:07:12,240 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:07:12] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 03:07:12,245 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:07:12] "GET /manager/ HTTP/1.1" 200 -
+2024-11-02 03:07:13,107 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:07:13] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:07:13,117 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:07:13] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:07:18,098 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:07:18] "GET /manager/items/1/edit HTTP/1.1" 200 -
+2024-11-02 03:07:28,423 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:07:28] "GET /manager/items/20/edit HTTP/1.1" 200 -
+2024-11-02 03:09:27,051 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 03:09:27,051 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 03:09:27,052 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 03:09:27,356 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 03:09:27,359 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 03:09:31,529 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:09:31] "GET /manager/items/8/edit HTTP/1.1" 200 -
+2024-11-02 03:09:42,045 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:09:42] "[32mPOST /manager/items/8/edit HTTP/1.1[0m" 302 -
+2024-11-02 03:09:42,058 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:09:42] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:09:42,146 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:09:42] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:09:48,933 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:09:48] "GET /manager/items/1/edit HTTP/1.1" 200 -
+2024-11-02 03:10:43,428 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:10:43] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:10:43,440 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:10:43] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:10:47,995 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:10:47] "GET /manager/items/18/edit HTTP/1.1" 200 -
+2024-11-02 03:10:58,674 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:10:58] "[32mPOST /manager/items/18/edit HTTP/1.1[0m" 302 -
+2024-11-02 03:10:58,680 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:10:58] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:10:58,692 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:10:58] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:11:18,553 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:11:18] "GET /manager/items/18/edit HTTP/1.1" 200 -
+2024-11-02 03:11:25,124 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:11:25] "[32mPOST /manager/items/18/edit HTTP/1.1[0m" 302 -
+2024-11-02 03:11:25,131 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:11:25] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:11:25,144 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:11:25] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:12:30,560 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\manager.py', reloading
+2024-11-02 03:12:30,600 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 03:12:30,930 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 03:12:30,933 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 03:12:37,615 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:37] "GET /manager/items/18/edit HTTP/1.1" 200 -
+2024-11-02 03:12:43,830 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:43] "[32mPOST /manager/items/18/edit HTTP/1.1[0m" 302 -
+2024-11-02 03:12:43,842 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:43] "GET /manager/items HTTP/1.1" 200 -
+2024-11-02 03:12:43,990 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:43] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:12:43,990 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:43] "GET /static/uploads/20241102031243_th.jpg HTTP/1.1" 200 -
+2024-11-02 03:12:52,340 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:52] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-02 03:12:52,343 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:52] "GET /login HTTP/1.1" 200 -
+2024-11-02 03:12:55,764 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 03:12:55,768 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:55] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 03:12:55,774 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:55] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 03:12:58,669 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:58] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 03:12:58,681 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:58] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 03:12:58,681 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:12:58] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:14:56,955 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:14:56] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 03:14:56,966 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:14:56] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:14:56,966 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:14:56] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 03:16:50,534 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:16:50] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 03:16:50,546 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:16:50] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 03:16:50,547 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:16:50] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:19:10,318 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:19:10] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 03:19:10,329 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:19:10] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 03:19:10,329 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:19:10] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 03:19:22,030 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 03:19:22,030 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 03:19:22,031 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 03:19:22,341 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 03:19:22,343 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 03:19:24,203 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:19:24] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 03:19:24,346 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:19:24] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 03:19:24,346 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 03:19:24] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 12:46:05,005 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 12:46:05,005 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 12:46:05,006 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 12:46:05,306 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 12:46:05,309 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 12:46:14,052 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:14] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 12:46:14,060 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:14] "GET /login HTTP/1.1" 200 -
+2024-11-02 12:46:14,244 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-11-02 12:46:19,856 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:19] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 12:46:19,861 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:19] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 12:46:19,874 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:19] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 12:46:22,729 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:22] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 12:46:22,873 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:22] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 12:46:22,873 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:22] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 12:46:29,803 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:29] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-02 12:46:29,806 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:29] "GET /login HTTP/1.1" 200 -
+2024-11-02 12:46:34,682 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:34] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 12:46:34,686 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:34] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 12:46:34,691 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:46:34] "GET /manager/ HTTP/1.1" 200 -
+2024-11-02 12:49:22,764 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:49:22] "GET /manager/ HTTP/1.1" 200 -
+2024-11-02 12:50:46,551 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\auth.py', reloading
+2024-11-02 12:50:46,595 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 12:52:11,557 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 12:52:11,557 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 12:52:11,557 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 12:52:11,861 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 12:52:11,863 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 12:52:13,922 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:52:13] "GET /manager/ HTTP/1.1" 200 -
+2024-11-02 12:52:17,199 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:52:17] "GET /profile HTTP/1.1" 200 -
+2024-11-02 12:52:26,306 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:52:26] "GET /change_password HTTP/1.1" 200 -
+2024-11-02 12:52:34,584 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:52:34] "[32mPOST /change_password HTTP/1.1[0m" 302 -
+2024-11-02 12:52:34,589 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:52:34] "GET /change_password HTTP/1.1" 200 -
+2024-11-02 12:52:48,806 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:52:48] "[32mPOST /change_password HTTP/1.1[0m" 302 -
+2024-11-02 12:52:48,811 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:52:48] "GET /change_password HTTP/1.1" 200 -
+2024-11-02 12:53:37,874 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\models\\user.py', reloading
+2024-11-02 12:53:37,921 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 12:53:38,291 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 12:53:38,293 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 12:53:40,290 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:53:40] "GET /change_password HTTP/1.1" 200 -
+2024-11-02 12:53:48,717 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:53:48] "[32mPOST /change_password HTTP/1.1[0m" 302 -
+2024-11-02 12:53:48,725 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:53:48] "GET /profile HTTP/1.1" 200 -
+2024-11-02 12:53:54,198 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:53:54] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-02 12:53:54,202 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:53:54] "GET /login HTTP/1.1" 200 -
+2024-11-02 12:54:03,828 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:54:03] "POST /login HTTP/1.1" 200 -
+2024-11-02 12:54:23,739 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:54:23] "POST /login HTTP/1.1" 200 -
+2024-11-02 12:55:57,100 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\models\\user.py', reloading
+2024-11-02 12:55:57,155 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 12:55:57,471 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 12:55:57,473 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 12:56:09,778 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:09] "POST /login HTTP/1.1" 200 -
+2024-11-02 12:56:14,928 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 12:56:14,934 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:14] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 12:56:14,943 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:14] "GET /manager/ HTTP/1.1" 200 -
+2024-11-02 12:56:40,508 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:40] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-02 12:56:40,510 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:40] "GET /login HTTP/1.1" 200 -
+2024-11-02 12:56:44,710 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:44] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-11-02 12:56:44,965 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:44] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-02 12:56:45,010 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:45] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-02 12:56:45,028 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:45] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=Mxo0nOhoxXXQSg4ysGao HTTP/1.1" 200 -
+2024-11-02 12:56:45,049 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:45] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-11-02 12:56:57,580 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:57] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-11-02 12:56:57,589 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-02 12:56:57,590 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-02 12:56:57,596 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=Mxo0nOhoxXXQSg4ysGao HTTP/1.1[0m" 304 -
+2024-11-02 12:56:57,629 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:56:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-11-02 12:58:35,487 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\auth.py', reloading
+2024-11-02 12:58:35,526 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 12:58:35,844 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 12:58:35,846 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 12:58:43,256 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 12:58:43,260 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:43] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 12:58:43,272 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:43] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 12:58:51,128 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:51] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 12:58:51,279 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:51] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 12:58:51,279 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:51] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 12:58:54,332 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:54] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 12:58:54,345 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:54] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 12:58:54,345 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:54] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 12:58:57,734 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:57] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 12:58:57,738 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:57] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 12:58:57,745 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:57] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 12:58:59,130 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:58:59] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 12:59:24,473 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:24] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 12:59:24,477 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:24] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 12:59:24,482 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:24] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 12:59:28,811 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:28] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 12:59:30,888 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:30] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 12:59:30,901 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:30] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 12:59:30,901 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:30] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 12:59:33,688 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:33] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 12:59:33,698 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:33] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 12:59:33,700 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:33] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 12:59:36,221 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:36] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 12:59:36,224 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:36] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 12:59:36,230 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 12:59:36] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:00:40,287 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\manager.py', reloading
+2024-11-02 13:00:40,330 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:00:40,661 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:00:40,663 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:00:42,702 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:42] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 13:00:42,706 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:42] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:00:42,713 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:42] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:00:43,449 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:43] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 13:00:43,454 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:43] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:00:43,460 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:43] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:00:44,970 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:44] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:00:45,793 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:45] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:00:46,533 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:46] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 13:00:46,537 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:46] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:00:46,542 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:46] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:00:54,945 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:54] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 13:00:54,949 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:54] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:00:54,954 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:54] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:00:56,642 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:56] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 13:00:56,790 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:56] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:00:56,790 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:56] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:00:58,589 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:00:58] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:01:03,343 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:03] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-02 13:01:03,346 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:03] "GET /login HTTP/1.1" 200 -
+2024-11-02 13:01:08,130 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 13:01:08,135 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:08] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:01:08,141 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:08] "GET /manager/ HTTP/1.1" 200 -
+2024-11-02 13:01:16,952 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:16] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-02 13:01:16,954 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:16] "GET /login HTTP/1.1" 200 -
+2024-11-02 13:01:21,984 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:21] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-02 13:01:21,989 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:21] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:01:21,994 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:21] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:01:25,169 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:25] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 13:01:25,182 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:25] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:01:25,182 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:25] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:01:45,186 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:45] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:01:45,192 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:45] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:01:46,364 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:46] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 13:01:46,369 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:46] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:01:46,375 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:46] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:01:55,638 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 13:01:55,638 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 13:01:55,638 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:01:55,945 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:01:55,947 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:01:58,150 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:01:58] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:02:00,774 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:02:00] "[32mGET /manager/orders HTTP/1.1[0m" 302 -
+2024-11-02 13:02:00,778 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:02:00] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:02:00,783 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:02:00] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:03:19,898 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:03:19] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:03:21,064 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:03:21] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:04:48,556 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:04:48] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:05:04,694 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 13:05:04,695 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 13:05:04,695 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:05:04,999 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:05:05,001 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:05:07,190 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:07] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:05:08,823 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:08] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:05:10,069 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:10] "[32mGET /manager/ HTTP/1.1[0m" 302 -
+2024-11-02 13:05:10,072 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:10] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:05:10,079 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:10] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:05:11,808 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:11] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:05:14,851 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:14] "[32mGET /manager/ HTTP/1.1[0m" 302 -
+2024-11-02 13:05:14,854 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:14] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:05:14,860 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:14] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:05:20,641 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:20] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:05:21,844 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:21] "[32mGET /manager/ HTTP/1.1[0m" 302 -
+2024-11-02 13:05:21,848 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:21] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:05:21,854 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:21] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:05:29,938 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:29] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:05:31,097 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:31] "[32mGET /manager/ HTTP/1.1[0m" 302 -
+2024-11-02 13:05:31,101 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:31] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:05:31,107 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:31] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:05:38,203 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:38] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 13:05:38,351 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:38] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:05:38,351 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:38] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:05:41,565 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:41] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:05:41,578 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:41] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:05:41,578 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:41] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:05:47,006 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:47] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:05:47,011 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:47] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:05:48,606 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:05:48] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:06:56,279 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 13:06:56,279 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 13:06:56,280 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:06:56,586 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:06:56,588 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:06:58,750 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:06:58] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:06:59,517 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:06:59] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:07:02,710 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:02] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:07:03,142 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:03] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:07:03,436 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:03] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:07:03,628 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:03] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:07:03,798 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:03] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:07:05,526 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:05] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:07:05,533 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:05] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:07:06,867 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:06] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:07:09,065 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:09] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:07:09,070 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:07:09] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:08:34,052 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:34] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:08:34,978 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:34] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:08:37,894 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:37] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:08:47,454 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 13:08:47,454 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 13:08:47,455 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:08:47,771 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:08:47,773 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:08:50,177 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:50] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:08:50,189 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:50] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:08:52,824 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:52] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:08:58,567 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:58] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:08:58,573 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:58] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:08:59,360 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:59] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:08:59,508 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:59] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:08:59,508 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:08:59] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:09:16,064 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:09:16] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:09:16,075 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:09:16] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:09:17,102 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:09:17] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 13:09:17,116 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:09:17] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:09:17,116 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:09:17] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:09:19,705 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:09:19] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:12:36,361 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:12:36] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:12:36,367 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:12:36] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:14:58,846 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:14:58] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:16:03,168 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:16:03] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:16:06,330 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:16:06] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:16:06,336 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:16:06] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:16:09,104 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:16:09] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:17:00,425 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 13:17:00,425 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 13:17:00,426 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:17:00,737 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:17:00,739 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:17:03,817 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:17:03] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:18:13,670 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\manager.py', reloading
+2024-11-02 13:18:13,713 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:18:14,041 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:18:14,043 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:18:16,006 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:18:16] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:18:38,971 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 13:18:38,971 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 13:18:38,972 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:18:39,276 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:18:39,278 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:18:40,862 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:18:40] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:18:51,329 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:18:51] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:20:29,248 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:20:29] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:20:38,851 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:20:38] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:20:38,858 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:20:38] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:22:26,141 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 13:22:26,141 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-02 13:22:26,142 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:22:26,469 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:22:26,472 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:22:28,111 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:28] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:22:31,018 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:31] "GET /profile HTTP/1.1" 200 -
+2024-11-02 13:22:34,230 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:34] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:22:36,017 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:36] "GET /profile HTTP/1.1" 200 -
+2024-11-02 13:22:37,373 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:37] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:22:37,378 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:37] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:22:38,305 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:38] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:22:38,456 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:38] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:22:38,456 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:38] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:22:49,191 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:49] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:22:49,196 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:49] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:22:57,482 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:57] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:22:57,496 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:57] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:22:57,496 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:22:57] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:24:31,585 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:31] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:24:31,596 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:31] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:24:31,597 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:31] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:24:42,279 - root - INFO - Received order data: {'table_number': '1', 'total_amount': 66, 'actual_amount': 66, 'items': [{'id': 2, 'quantity': 1, 'price': 24, 'actual_price': 24}, {'id': 3, 'quantity': 1, 'price': 22, 'actual_price': 22}, {'id': 4, 'quantity': 1, 'price': 20, 'actual_price': 20}]}
+2024-11-02 13:24:42,306 - root - INFO - Order created successfully: 7
+2024-11-02 13:24:42,307 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:42] "POST /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:24:50,433 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:50] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:24:50,438 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:50] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:24:52,214 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:52] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:24:55,306 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:55] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:24:55,311 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:55] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:24:56,655 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:56] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:24:56,669 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:56] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:24:56,669 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:24:56] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:25:03,613 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:25:03] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:25:03,619 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:25:03] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:26:34,085 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:26:34] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:26:42,910 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:26:42] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:26:42,924 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:26:42] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:26:42,925 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:26:42] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:26:58,795 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:26:58] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:27:07,674 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:27:07] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:27:07,688 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:27:07] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:27:07,689 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:27:07] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:28:36,150 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:28:36] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:28:36,161 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:28:36] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:28:36,162 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:28:36] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:31:21,056 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\translations\\__init__.py', reloading
+2024-11-02 13:31:21,100 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:47:06,801 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:47:07,141 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:47:07,144 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:47:07,159 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 13:47:09,657 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:09] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:47:13,600 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:13] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:47:13,606 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:13] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:47:16,479 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:16] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:47:16,633 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:16] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:47:16,633 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:16] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:47:26,624 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:26] "[35m[1mGET /set_language/en HTTP/1.1[0m" 500 -
+2024-11-02 13:47:26,636 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:26] "GET /set_language/en?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-11-02 13:47:26,637 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:26] "GET /set_language/en?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-11-02 13:47:26,641 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:26] "GET /set_language/en?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-11-02 13:47:26,672 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:26] "GET /set_language/en?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2024-11-02 13:47:26,714 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:47:26] "GET /set_language/en?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-11-02 13:48:57,963 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:48:57] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:49:01,779 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:01] "[35m[1mGET /set_language/en HTTP/1.1[0m" 500 -
+2024-11-02 13:49:01,791 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:01] "GET /set_language/en?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-11-02 13:49:01,791 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:01] "GET /set_language/en?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-11-02 13:49:01,799 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:01] "GET /set_language/en?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2024-11-02 13:49:01,799 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:01] "GET /set_language/en?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-11-02 13:49:10,785 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:49:11,159 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:49:11,161 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:49:11,176 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 13:49:15,636 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:15] "[35m[1mGET /set_language/en HTTP/1.1[0m" 500 -
+2024-11-02 13:49:15,782 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:15] "GET /set_language/en?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-11-02 13:49:15,782 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:15] "GET /set_language/en?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-11-02 13:49:15,787 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:15] "GET /set_language/en?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2024-11-02 13:49:15,787 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:49:15] "GET /set_language/en?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-11-02 13:50:16,451 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\__init__.py', reloading
+2024-11-02 13:50:16,482 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:50:16,838 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:50:16,840 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:50:16,856 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 13:50:20,122 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:20] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:50:22,860 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:22] "[32mGET /set_language/en HTTP/1.1[0m" 302 -
+2024-11-02 13:50:22,866 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:22] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:50:25,595 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:25] "[32mGET /set_language/no HTTP/1.1[0m" 302 -
+2024-11-02 13:50:25,601 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:25] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:50:27,414 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:27] "[32mGET /set_language/en HTTP/1.1[0m" 302 -
+2024-11-02 13:50:27,421 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:27] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:50:29,675 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:29] "[32mGET /set_language/zh HTTP/1.1[0m" 302 -
+2024-11-02 13:50:29,681 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:29] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:50:30,922 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:30] "[32mGET /set_language/en HTTP/1.1[0m" 302 -
+2024-11-02 13:50:30,929 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:50:30] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:51:51,915 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\__init__.py', reloading
+2024-11-02 13:51:51,952 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:52:48,744 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 13:52:49,098 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 13:52:49,101 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 13:52:49,117 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 13:52:51,645 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:52:51] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:52:55,636 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:52:55] "[32mGET /set_language/en HTTP/1.1[0m" 302 -
+2024-11-02 13:52:55,642 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:52:55] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:52:57,203 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:52:57] "[32mGET /set_language/no HTTP/1.1[0m" 302 -
+2024-11-02 13:52:57,210 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:52:57] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:52:58,938 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:52:58] "[32mGET /set_language/en HTTP/1.1[0m" 302 -
+2024-11-02 13:52:58,945 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:52:58] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:53:26,378 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:53:26] "[32mGET /set_language/zh HTTP/1.1[0m" 302 -
+2024-11-02 13:53:26,385 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:53:26] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:53:28,749 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:53:28] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:53:30,773 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:53:30] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:53:30,779 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:53:30] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:53:45,278 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:53:45] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 13:53:45,429 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:53:45] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:53:45,429 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:53:45] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:57:19,953 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:19] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 13:57:19,972 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:19] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:57:19,972 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:19] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:57:33,786 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:33] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:57:33,791 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:33] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:57:34,950 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:34] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 13:57:34,964 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:34] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 13:57:34,965 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:34] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 13:57:47,420 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:47] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:57:47,425 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:47] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 13:57:48,578 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:57:48] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:58:05,479 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:58:05] "POST /manager/orders/7/status HTTP/1.1" 200 -
+2024-11-02 13:58:05,497 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:58:05] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:58:16,659 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:58:16] "POST /manager/orders/7/status HTTP/1.1" 200 -
+2024-11-02 13:58:16,677 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:58:16] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:58:32,482 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:58:32] "POST /manager/orders/5/status HTTP/1.1" 200 -
+2024-11-02 13:58:32,501 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:58:32] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 13:59:59,541 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:59:59] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 13:59:59,548 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 13:59:59] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 14:00:00,625 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:00] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 14:00:00,632 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:00] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 14:00:03,083 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:03] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 14:00:03,089 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:03] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 14:00:04,563 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:04] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 14:00:04,577 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:04] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 14:00:04,580 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:04] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 14:00:07,508 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:07] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 14:00:07,515 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:07] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 14:00:08,664 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:08] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 14:00:08,678 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:08] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 14:00:08,679 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:00:08] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 14:10:10,357 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:10:10] "GET /staff/menu HTTP/1.1" 200 -
+2024-11-02 14:10:10,368 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:10:10] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 14:10:10,368 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:10:10] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 14:10:12,397 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:10:12] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 14:10:12,402 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:10:12] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 14:10:13,539 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:10:13] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 14:10:13,554 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:10:13] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 14:10:13,554 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:10:13] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 14:13:52,009 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:13:52] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 14:13:52,020 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:13:52] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 14:13:52,020 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:13:52] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 14:14:33,886 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:14:33] "[33mPOST /staff/submit_order HTTP/1.1[0m" 404 -
+2024-11-02 14:15:32,493 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\staff.py', reloading
+2024-11-02 14:15:32,538 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 14:15:32,927 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 14:15:32,930 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 14:15:32,945 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 14:15:37,493 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:15:37] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 14:15:37,645 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:15:37] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 14:15:37,645 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:15:37] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 14:15:46,047 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:15:46] "[35m[1mPOST /staff/submit_order HTTP/1.1[0m" 500 -
+2024-11-02 14:15:54,952 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 14:15:54] "[35m[1mPOST /staff/submit_order HTTP/1.1[0m" 500 -
+2024-11-02 16:50:49,825 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:50:49] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 16:50:49,837 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:50:49] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 16:50:49,838 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:50:49] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 16:50:50,688 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:50:50] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 16:50:50,699 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:50:50] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 16:50:50,699 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:50:50] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 16:50:56,831 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:50:56] "[35m[1mPOST /staff/submit_order HTTP/1.1[0m" 500 -
+2024-11-02 16:51:14,326 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 16:51:14,671 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 16:51:14,673 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 16:51:14,690 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 16:51:25,933 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:51:25] "[35m[1mPOST /staff/submit_order HTTP/1.1[0m" 500 -
+2024-11-02 16:52:22,988 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\staff.py', reloading
+2024-11-02 16:52:23,024 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 16:52:23,407 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 16:52:23,409 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 16:52:23,425 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 16:52:29,034 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:29] "POST /staff/submit_order HTTP/1.1" 200 -
+2024-11-02 16:52:31,224 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:31] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 16:52:31,239 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:31] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 16:52:32,382 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:32] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 16:52:41,326 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:41] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 16:52:41,485 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:41] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 16:52:41,485 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:41] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 16:52:54,421 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:54] "POST /staff/submit_order HTTP/1.1" 200 -
+2024-11-02 16:52:59,609 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:59] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 16:52:59,615 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:52:59] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 16:53:01,727 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:53:01] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 16:53:03,890 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:53:03] "GET /manager/orders/9/details HTTP/1.1" 200 -
+2024-11-02 16:53:21,357 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 16:53:21,718 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 16:53:21,721 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 16:53:21,739 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 16:53:27,712 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:53:27] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 16:53:36,306 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:53:36] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 16:53:42,550 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:53:42] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 16:53:42,557 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:53:42] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 16:53:43,481 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:53:43] "GET /staff/take_order HTTP/1.1" 200 -
+2024-11-02 16:53:43,640 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:53:43] "[36mGET /static/uploads/20241102031243_th.jpg HTTP/1.1[0m" 304 -
+2024-11-02 16:53:43,640 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:53:43] "[36mGET /static/uploads/20241102030630_Screenshot_2024-08-24_000315.png HTTP/1.1[0m" 304 -
+2024-11-02 16:54:01,520 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:54:01] "POST /staff/submit_order HTTP/1.1" 200 -
+2024-11-02 16:54:08,478 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:54:08] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 16:54:08,484 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:54:08] "GET /staff/ HTTP/1.1" 200 -
+2024-11-02 16:54:10,668 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:54:10] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 16:54:47,437 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:54:47] "POST /manager/orders/6/status HTTP/1.1" 200 -
+2024-11-02 16:54:47,460 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:54:47] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 16:54:53,465 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:54:53] "GET /manager/orders/7/details HTTP/1.1" 200 -
+2024-11-02 16:54:57,882 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:54:57] "GET /manager/orders/7/details HTTP/1.1" 200 -
+2024-11-02 16:55:00,753 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:55:00] "GET /manager/orders/10/details HTTP/1.1" 200 -
+2024-11-02 16:55:04,225 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:55:04] "GET /manager/orders/10/details HTTP/1.1" 200 -
+2024-11-02 16:55:07,851 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:55:07] "GET /manager/orders/9/details HTTP/1.1" 200 -
+2024-11-02 16:56:35,563 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 16:56:35,911 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 16:56:35,913 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 16:56:35,931 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 16:56:38,424 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:56:38] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 16:56:40,553 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:56:40] "GET /manager/orders/10/details HTTP/1.1" 200 -
+2024-11-02 16:57:31,217 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\manager.py', reloading
+2024-11-02 16:57:31,251 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 16:57:31,599 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 16:57:31,602 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 16:57:31,620 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 16:57:40,950 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:57:40] "GET /manager/orders HTTP/1.1" 200 -
+2024-11-02 16:57:42,896 - app.routes.manager - DEBUG - Getting order details for order 10
+2024-11-02 16:57:42,898 - app.routes.manager - DEBUG - Found order: 20241102165401
+2024-11-02 16:57:42,905 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:57:42] "GET /manager/orders/10/details HTTP/1.1" 200 -
+2024-11-02 16:58:04,917 - werkzeug - INFO -  * Restarting with stat
+2024-11-02 16:58:05,289 - werkzeug - WARNING -  * Debugger is active!
+2024-11-02 16:58:05,291 - werkzeug - INFO -  * Debugger PIN: 109-689-113
+2024-11-02 16:58:05,307 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-11-02 16:58:06,902 - app.routes.manager - DEBUG - Getting order details for order 10
+2024-11-02 16:58:06,904 - app.routes.manager - DEBUG - Found order: 20241102165401
+2024-11-02 16:58:06,911 - werkzeug - INFO - 127.0.0.1 - - [02/Nov/2024 16:58:06] "GET /manager/orders/10/details HTTP/1.1" 200 -
+2024-11-02 16:58:54,392 - werkzeug - INFO -  * Detected change in 'C:\\PycharmProjects\\pythonProject\\restaurant\\app\\routes\\manager.py', reloading
+2024-11-02 16:58:54,426 - werkzeug - INFO -  * Restarting with stat

@@ -1,0 +1,529 @@
+{% extends "base.html" %}
+
+{% block title %}分类管理{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>分类管理</h1>
+    <div class="mb-3">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+            添加分类
+        </button>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table class="table" id="categoriesTable">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>排序</th>
+                        <th>创建时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="sortable">
+                    {% for category in categories %}
+                    <tr data-id="{{ category.id }}" draggable="true" class="draggable-row">
+                        <td>
+                            <span data-bs-toggle="popover" 
+                                  data-bs-trigger="hover"
+                                  data-bs-html="true"
+                                  data-bs-placement="right"
+                                  data-bs-container="body"
+                                  data-bs-animation="false"
+                                  data-bs-offset="[0, 0]"
+                                  data-bs-content="
+                                    <div class='category-popover'>
+                                        <div class='popover-icon'>
+                                            <i class='bi bi-info-circle-fill'></i>
+                                        </div>
+                                        <div class='popover-content'>
+                                            {{ category.description or '暂无描述' }}
+                                        </div>
+                                    </div>
+                                  ">
+                                {{ category.name }}
+                            </span>
+                        </td>
+                        <td class="sort-order">{{ category.sort_order }}</td>
+                        <td>{{ category.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary edit-category" 
+                                    data-id="{{ category.id }}"
+                                    data-name="{{ category.name }}"
+                                    data-description="{{ category.description or '' }}"
+                                    data-sort="{{ category.sort_order }}"
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#editCategoryModal">编辑</button>
+                            <button class="btn btn-sm btn-danger delete-category" 
+                                    data-id="{{ category.id }}">删除</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 添加分类模态框 -->
+<div class="modal fade" id="addCategoryModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">添加分类</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="name" class="form-label">分类名称</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">分类描述</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" 
+                              placeholder="请输入分类描述（选填）"></textarea>
+                </div>
+                <div class="mb-3">
+                    <small class="text-muted">排序号将自动分配，可以通过拖动调整顺序</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="saveNewCategory">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 编辑分类模态框 -->
+<div class="modal fade" id="editCategoryModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">编辑分类</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editCategoryForm">
+                    <input type="hidden" id="edit_id">
+                    <div class="mb-3">
+                        <label for="edit_name" class="form-label">分类名称</label>
+                        <input type="text" class="form-control" id="edit_name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit_description" class="form-label">分类描述</label>
+                        <textarea class="form-control" id="edit_description" name="description" rows="3" 
+                                  placeholder="请输入分类描述（选填）"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit_sort_order" class="form-label">排序</label>
+                        <input type="number" class="form-control" id="edit_sort_order" name="sort_order">
+                        <small class="text-muted">可以通过拖动调整顺序</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="saveEditCategory">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.draggable-row {
+    cursor: move;
+}
+.draggable-row.dragging {
+    opacity: 0.5;
+    background: #f8f9fa;
+}
+.drop-target {
+    border-top: 2px solid #4e73df;
+}
+
+/* 添加 Popover 相关样式 */
+.category-popover {
+    padding: 8px;
+    max-width: 300px;
+}
+
+.popover-icon {
+    color: #4e73df;
+    margin-bottom: 5px;
+    animation: pulse 2s infinite;
+}
+
+.popover-content {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* 添加动画效果 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 自定义 Popover 样式 */
+.popover {
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    transform: none !important;
+}
+
+.popover.bs-popover-end {
+    margin-left: 5px;
+}
+
+.popover-body {
+    padding: 12px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+/* 移除淡入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 悬停效果 */
+[data-bs-toggle="popover"] {
+    cursor: help;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+[data-bs-toggle="popover"]:hover {
+    color: #4e73df;
+}
+
+[data-bs-toggle="popover"]::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #4e73df;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+[data-bs-toggle="popover"]:hover::after {
+    transform: scaleX(1);
+}
+</style>
+
+{% block scripts %}
+<script>
+// 在 DOMContentLoaded 事件处理器外部定义全局变量
+let deletingCategories = new Set();  // 用于跟踪正在删除的分类ID
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tbody = document.querySelector('.sortable');
+    let draggingElement = null;
+    let isSubmitting = false;
+
+    // 添加调试日志
+    console.log('初始化分类管理页面');
+
+    // 添加分类处理
+    const saveButton = document.getElementById('saveNewCategory');
+    if (saveButton) {
+        console.log('找到保存按钮');
+        
+        // 移除可能存在的旧事件监听器
+        const newButton = saveButton.cloneNode(true);
+        saveButton.parentNode.replaceChild(newButton, saveButton);
+        
+        // 添加新的事件监听器
+        newButton.addEventListener('click', async function(e) {
+            console.log('点击保存按');
+            e.stopPropagation();
+            e.preventDefault();
+            
+            if (isSubmitting) {
+                console.log('正在提交中，跳过重复请求');
+                return;
+            }
+
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                description: document.getElementById('description').value.trim()
+            };
+            
+            if (!formData.name) {
+                alert('请填写分类名称');
+                return;
+            }
+
+            isSubmitting = true;
+            console.log('设置提交状态为true');
+            this.disabled = true;
+            const originalText = this.textContent;
+            this.textContent = '保存中...';
+
+            try {
+                console.log('发送请求');
+                const response = await fetch('/manager/categories/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                console.log('收到响应:', result);
+
+                if (response.ok && result.success) {
+                    console.log('添加成功，准备刷新页面');
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('addCategoryModal'));
+                    if (modal) {
+                        modal.hide();
+                    }
+                    document.getElementById('name').value = '';
+                    document.getElementById('description').value = '';
+                    window.location.replace('/manager/categories');
+                } else {
+                    alert('添加失败：' + (result.message || '未知错误'));
+                    this.disabled = false;
+                    this.textContent = originalText;
+                    isSubmitting = false;
+                }
+            } catch (error) {
+                console.error('请求出错:', error);
+                alert('添加失败：' + error.message);
+                this.disabled = false;
+                this.textContent = originalText;
+                isSubmitting = false;
+            }
+        });
+    } else {
+        console.error('未找到保存按钮');
+    }
+
+    // 模态框关闭事件
+    const modal = document.getElementById('addCategoryModal');
+    if (modal) {
+        modal.addEventListener('hidden.bs.modal', function() {
+            console.log('模态框关闭，重置状态');
+            document.getElementById('name').value = '';
+            document.getElementById('description').value = '';
+            isSubmitting = false;
+            const saveButton = document.getElementById('saveNewCategory');
+            if (saveButton) {
+                saveButton.disabled = false;
+                saveButton.textContent = '保存';
+            }
+        });
+    }
+
+    // 拖动相关事件处理
+    tbody.addEventListener('dragstart', function(e) {
+        draggingElement = e.target.closest('tr');
+        draggingElement.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+    });
+
+    tbody.addEventListener('dragend', function(e) {
+        draggingElement.classList.remove('dragging');
+        draggingElement = null;
+        // 更新所有行的排序号
+        updateSortOrders();
+    });
+
+    tbody.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        const row = e.target.closest('tr');
+        if (!row || row === draggingElement) return;
+
+        const rect = row.getBoundingClientRect();
+        const midpoint = rect.top + rect.height / 2;
+        
+        if (e.clientY < midpoint) {
+            row.parentNode.insertBefore(draggingElement, row);
+        } else {
+            row.parentNode.insertBefore(draggingElement, row.nextSibling);
+        }
+    });
+
+    // 更新排序号并送到服务器
+    async function updateSortOrders() {
+        const rows = tbody.querySelectorAll('tr');
+        const updates = [];
+        
+        rows.forEach((row, index) => {
+            const id = row.dataset.id;
+            const sortOrder = index + 1;
+            row.querySelector('.sort-order').textContent = sortOrder;
+            updates.push({ id, sort_order: sortOrder });
+        });
+
+        try {
+            const response = await fetch('/manager/categories/update-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ updates })
+            });
+
+            const result = await response.json();
+            if (!result.success) {
+                alert('更新排序失败：' + result.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('新排序失败');
+        }
+    }
+
+    // 编辑分类
+    document.querySelectorAll('.edit-category').forEach(button => {
+        button.addEventListener('click', () => {
+            document.getElementById('edit_id').value = button.dataset.id;
+            document.getElementById('edit_name').value = button.dataset.name;
+            document.getElementById('edit_description').value = button.dataset.description;
+            document.getElementById('edit_sort_order').value = button.dataset.sort;
+        });
+    });
+    
+    document.getElementById('saveEditCategory').addEventListener('click', async () => {
+        const id = document.getElementById('edit_id').value;
+        const formData = {
+            name: document.getElementById('edit_name').value.trim(),
+            description: document.getElementById('edit_description').value.trim(),
+            sort_order: document.getElementById('edit_sort_order').value
+        };
+        
+        try {
+            const response = await fetch(`/manager/categories/${id}/edit`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                location.reload();
+            } else {
+                alert('更新失败：' + result.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('更新失败');
+        }
+    });
+    
+    // 删除分类 - 重写删除处理逻辑
+    document.querySelectorAll('.delete-category').forEach(button => {
+        button.addEventListener('click', async () => {
+            const id = button.dataset.id;
+            
+            // 检查是否正在删除
+            if (deletingCategories.has(id)) {
+                console.log(`分类 ${id} 正在删除中...`);
+                return;
+            }
+
+            if (!confirm('确定要删除这个分类吗？')) {
+                return;
+            }
+
+            try {
+                // 添加到正在删除的集合中
+                deletingCategories.add(id);
+                button.disabled = true;
+                button.textContent = '删除中...';
+
+                const response = await fetch(`/manager/categories/${id}/delete`, {
+                    method: 'POST'
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // 删除成功，移除行
+                    const row = button.closest('tr');
+                    if (row) {
+                        row.remove();
+                        // 更新其他行的排序号
+                        updateRowNumbers();
+                    }
+                } else {
+                    alert('删除失败：' + result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('删除失败：' + error.message);
+            } finally {
+                // 从正在删除的集合中移除
+                deletingCategories.delete(id);
+                button.disabled = false;
+                button.textContent = '删除';
+            }
+        });
+    });
+
+    // 更新行号的函数
+    function updateRowNumbers() {
+        const rows = document.querySelectorAll('.sortable tr');
+        rows.forEach((row, index) => {
+            const sortCell = row.querySelector('.sort-order');
+            if (sortCell) {
+                sortCell.textContent = index + 1;
+            }
+        });
+    }
+
+    // 初始化 Popovers
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl, {
+            container: 'body',
+            animation: false,
+            trigger: 'hover',
+            placement: 'right',
+            offset: [0, 0],
+            delay: {
+                show: 0,  // 立即显示
+                hide: 100
+            },
+            popperConfig: {
+                modifiers: [{
+                    name: 'computeStyles',
+                    options: {
+                        gpuAcceleration: false  // 禁用 GPU 加速
+                    }
+                }]
+            }
+        });
+    });
+});
+</script>
+{% endblock %}
+{% endblock %} 
